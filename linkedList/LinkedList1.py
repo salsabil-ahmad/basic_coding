@@ -86,13 +86,27 @@ class LinkedList:
             self.insert_at_end(data)
 
     def insert_after_value(self, data_after, data_to_insert):
-        itr=self.head
+        itr=self.head   
         while itr:
             if itr.data==data_after:
                 node = Node(data_to_insert,itr.next)
                 itr.next = node
                 break
             itr=itr.next
+            
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        prev,cur=None,head
+        while cur:
+            temp=cur.next
+            cur.next=prev
+            prev=cur
+            cur=temp
+        head=prev
+        return head
 
 
 
