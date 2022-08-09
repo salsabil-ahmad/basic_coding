@@ -1,0 +1,19 @@
+Account,ServiceType,Parameter,Value
+Mobile_Account_RFS,Voice Data Messaging,ICCID
+Mobile_Account_RFS,Voice Data Messaging,ServiceUserID
+Mobile Account_Voicemail Service,Voice Data Messaging,ICCID
+Mobile Account_Voicemail Service,Voice Data Messaging,VMUsername
+Mobile Account_Voicemail Service,Voice Data Messaging,Service User ID
+Mobile Account_Voicemail Service,Voice Data Messaging,DisconnectVoicemail,False					
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,ICCID
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,Service User ID
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,VMUsername
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,DisconnectVoicemail,False	
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,Product
+Mobile Account_Voicemail_WIFI service,Voice Data Messaging,DisconnectWIFIAccess,False
+Mobile_Account_RFS,Data Messaging,ICCID
+Mobile_Account_RFS,Data Messaging,Service User ID
+Mobile Account_WIFI service,Data Messaging,ICCID
+Mobile Account_WIFI service,Data Messaging,Service User ID
+Mobile Account_WIFI service,Data Messaging,Product
+Mobile Account_WIFI service,Data Messaging,DisconnectWIFIAccess,False

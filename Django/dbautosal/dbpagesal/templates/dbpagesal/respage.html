@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel='stylesheet' href="{% static 'css/mycss.css' %}" type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body  {
+    width:100%;
+    background: url('/static/img.jfif') ;
+    background-size:cover; 
+}
+
+.accordion {
+
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: rgb(144, 207, 248); 
+}
+.panel {
+  padding: 0 18px;
+  margin-top: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+</style>
+
+</head>
+<body class="body">
+	<h2>
+		Mobile Service and Technical Parameters
+	</h2>
+ <div class="container">
+ <button class ="back-button" onclick="goBack()">Go Back</button>
+<button class="accordion"><b>UIM mobile service account parameter</b></button>
+	<div id="sub3" class="panel" data-parent="#myAccordion">
+			<table class="center tbl-header">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">NAME</th>
+						<th scope="col">VALUE</th>
+					</tr>
+				</thead>
+			</table>
+			<div class="center tbl-content2" id="searchresult">
+				<table class="center1 table-hover" cellpadding="0" cellspacing="0">
+					{% for i in resultm %}
+					<tr>
+						{% for j in i %}
+						<td>{{j}}</td> {% endfor %}
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+<button class="accordion"><b>UIM wifi account parameter</b></button>
+    <div id="sub2" class="panel" data-parent="#myAccordion">
+			<table class=" center tbl-header" cellpadding="0" cellspacing="0"
+				border="0">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">NAME</th>
+						<th scope="col">VALUE</th>
+					</tr>
+				</thead>
+			</table>
+			<div class="center tbl-content2" id="searchresult">
+				<table class="center1 table-hover" cellpadding="0" cellspacing="0">
+					{% for i in resultw %}
+					<tr>
+						{% for j in i %}
+						<td>{{j}}</td> {% endfor %}
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+<button class="accordion"><b>UIM voicemail account parameter</b></button>
+   <div id="sub1" class="panel" data-parent="#myAccordion">
+			<table class="center tbl-header" cellpadding="0" cellspacing="0"
+				border="0">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">NAME</th>
+						<th scope="col">VALUE</th>
+					</tr>
+				</thead>
+			</table>
+			<div class="center tbl-content2" id="searchresult">
+				<table class="center1 table-hover" cellpadding="0" cellspacing="0">
+					{% for i in resultv %}
+					<tr>
+						{% for j in i %}
+						<td>{{j}}</td> {% endfor %}
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+</div>
+<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+			/* 	if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				} */
+				 if (panel.style.maxHeight){
+				      panel.style.maxHeight = null;
+				    } else {
+				      panel.style.maxHeight = panel.scrollHeight + "px";
+				    } 
+			});
+		}
+	</script> 
+	
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+
+</body>
+</html>
